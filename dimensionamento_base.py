@@ -537,7 +537,9 @@ class DimensionamentoBase:
         Md = resultado_mf.get("MF_kN_m_por_m", 0) * 1000  # kN.m/m → N.m/m
 
         fck = self.materiais.concreto.get("fck", 30)  # MPa
-        fcd = (fck / 1.4) * 1000  # kN/m² → N/m²
+        # fck é fornecido em MPa (N/mm²). Para utilizar na equação em N/m² é
+        # necessário multiplicar por 1e6.
+        fcd = (fck / 1.4) * 1e6  # MPa → N/m²
 
         b1 = self.dados.geometria.get("lado_a_m", 0)
         b2 = self.dados.geometria.get("lado_b_m", 0)
@@ -579,10 +581,12 @@ class DimensionamentoBase:
         y_d = dados_linha_neutra.get('y_d_ratio', 0)
 
         fck = self.materiais.concreto.get('fck', 30)  # MPa
-        fcd = fck / 1.4 * 1000  # kN/m² → N/m²
+        # Conversão correta de MPa para N/m²
+        fcd = (fck / 1.4) * 1e6
 
         fyk = self.materiais.aco.get('fyk', 500)  # MPa
-        fyd = fyk / 1.15 * 1000  # kN/cm² → N/m²
+        # Conversão de MPa para N/m²
+        fyd = (fyk / 1.15) * 1e6
 
         if fyd == 0:
             raise ValueError("fyd não pode ser zero.")
