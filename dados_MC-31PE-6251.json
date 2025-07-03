@@ -1,0 +1,43 @@
+{
+    "geometria": {
+        "altura": 12.192,
+        "diametro": 9.144,
+        "diametro_base": 9.64,
+        "altura_base": 0.9,
+        "lado_a_m": 0.25,
+        "lado_b_m": 0.25,
+        "h1": 0.4,
+        "h2": 0.5,
+        "h3": 0.0,
+        "fck": 30.0,
+        "gamma": 25.0,
+        "E_conc": 30672.46,
+        "fyk": 500.0,
+        "E_aco": 200000.0,
+        "tipo": "argila compactada",
+        "vento_v0": 30.0,
+        "vento_s1": 1.0,
+        "vento_s2": 0.96,
+        "vento_s3": 0.95,
+        "peso_tanque_vazio": 357.1
+    },
+    "solo": {
+        "tipo": "argila compactada",
+        "tensao_adm_kgfcm2": 1.5,
+        "k_reac": 10000.0,
+        "Esolo": 20000.0,
+        "poisson": 0.4
+    },
+    "cargas": {
+        "pressao_interna": 0.0,
+        "vento_v0": 30.0,
+        "vento_s1": 1.0,
+        "vento_s2": 0.96,
+        "vento_s3": 0.95,
+        "pressao_vento": 0.4588100042399999
+    },
+    "dados_tanque": {
+        "PTV": 357.1,
+        "dens_fluido": 9.96
+    }
+}
